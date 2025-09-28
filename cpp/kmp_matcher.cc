@@ -1,5 +1,9 @@
 #include "kmp_matcher.h"
 
+// The code here follows:
+// https://www-igm.univ-mlv.fr/~lecroq/string/node8.html
+// and https://www.brics.dk/RS/02/32/BRICS-RS-02-32.pdf.
+
 namespace revfad_wiki {
 
 KmpMatcher::KmpMatcher(std::string pattern)
@@ -12,7 +16,6 @@ void KmpMatcher::initialize_next_table() {
   if (pattern_len_ == 0) {
     return;
   }
-  next_.resize(pattern_len_ + 1);
   next_[0] = -1;
   int i = 0;
   int t = -1;
