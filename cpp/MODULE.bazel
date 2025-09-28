@@ -1,0 +1,3 @@
+module(name="revfad_wiki", version="0.0.1")
+bazel_dep(name = "googletest", version = "1.17.0")
+bazel_dep(name = "sqlite3", version = "3.50.4")
