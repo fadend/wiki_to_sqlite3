@@ -6,3 +6,7 @@ However, at least with this first attempt, it seems that SQLite may not be pract
 index by title is taking around 9 minutes.
 
 Let's instead for now look at data formats/DBs more specialized for this task -- fast lookup by string index.
+
+# Requirements
+
+This project uses Bazel for builds: https://bazel.build/.
