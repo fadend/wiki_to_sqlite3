@@ -2,6 +2,10 @@
 
 namespace revfad_wiki {
 
+WikiIter::WikiIter(std::istream &input)
+    : input_(input), page_start_("<page>"), page_end_("</page>"),
+      title_start_("<title>"), title_end_("</title>") {}
+
 std::optional<WikiArticle> WikiIter::next() {
   if (!consume(page_start_)) {
     return std::nullopt;

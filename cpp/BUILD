@@ -1,4 +1,9 @@
 cc_library(
+  name="defer",
+  hdrs=["defer.h"],
+)
+
+cc_library(
   name="kmp_matcher",
   srcs=["kmp_matcher.cc"],
   hdrs=["kmp_matcher.h"],
@@ -15,6 +20,20 @@ cc_library(
   srcs=["wiki_iter.cc"],
   hdrs=["wiki_iter.h"],
   deps=[":kmp_matcher", ":wiki_article"]
+)
+
+# Binaries
+
+cc_binary(
+  name="wiki_to_sqlite3",
+  srcs=["wiki_to_sqlite3.cc"],
+  deps=[
+    ":defer",
+    ":wiki_article",
+    ":wiki_iter",
+    "@abseil-cpp//absl/flags:flag",
+    "@abseil-cpp//absl/flags:parse",
+    "@sqlite3"]
 )
 
 # Tests

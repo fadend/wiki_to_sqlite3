@@ -10,9 +10,7 @@
 namespace revfad_wiki {
 class WikiIter {
 public:
-  WikiIter(std::istream &input)
-      : input_(input), page_start_("<page>"), page_end_("</page>"),
-        title_start_("<title>"), title_end_("</title>") {}
+  WikiIter(std::istream &input);
   WikiIter(const WikiIter &) = delete;
   virtual ~WikiIter() = default;
 
